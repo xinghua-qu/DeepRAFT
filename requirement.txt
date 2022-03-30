@@ -1,0 +1,3 @@
+kornia==0.5.11
+easydict==1.9
+lpips==0.1.4
