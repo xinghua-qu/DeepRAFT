@@ -1,3 +1,19 @@
-kornia==0.5.11
-easydict==1.9
-lpips==0.1.4
+opencv-python
+torchvision
+pandas
+tensorboard
+torch
+Pillow
+easydict
+matplotlib
+scikit-learn
+kornia
+torchgeometry
+lpips
+tensorflow-io
+tensorflow==2.5.0
+setuptools==59.5.0
+
+## also include the following two packages.
+## git clone this one in your folder (https://github.com/mlomnitz/DiffJPEG)
+## pip3 install git+https://github.com/fra31/auto-attack

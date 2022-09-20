@@ -4,8 +4,43 @@ from torch.nn import functional as TF
 import numpy as np
 from torchvision import transforms
 import torchvision
-import torchvision.transforms as T
 
+
+def pgd_attack(model, images, labels, eps, alpha) :
+    loss = torch.nn.CrossEntropyLoss()
+        
+    ori_images = images.data
+    iters=40    
+    for i in range(iters) :    
+        images.requires_grad = True
+        outputs = model(images)
+
+        model.zero_grad()
+        cost = loss(outputs, labels).to(device)
+        cost.backward()
+
+        adv_images = images + alpha*images.grad.sign()
+        eta = torch.clamp(adv_images - ori_images, min=-eps, max=eps)
+        images = torch.clamp(ori_images + eta, min=0, max=1).detach_()
+            
+    return images
+
+def fgsm_attack(model, images, labels, eps) :
+    loss = torch.nn.CrossEntropyLoss()
+        
+    ori_images = images.data  
+    images.requires_grad = True
+    outputs = model(images)
+
+    model.zero_grad()
+    cost = loss(outputs, labels).cuda()
+    cost.backward()
+
+    adv_images = images + alpha*images.grad.sign()
+    eta = torch.clamp(adv_images - ori_images, min=-eps, max=eps)
+    images = torch.clamp(ori_images + eta, min=0, max=1).detach_()
+            
+    return images
 
 
 class PGD_DEC(torch.nn.Module):
@@ -35,7 +70,7 @@ class PGD_DEC(torch.nn.Module):
         self.steps = steps
         self.random_start = random_start
         self.detector = detector
-        self.celoss = torch.nn.CrossEntropyLoss()
+        self.ce_loss = torch.nn.CrossEntropyLoss(reduction='mean')
 
     def forward(self, images, labels):
         r"""
@@ -56,7 +91,7 @@ class PGD_DEC(torch.nn.Module):
             outputs = self.detector(adv_images)
 
             # Calculate loss
-            cost = self.celoss(outputs, labels)
+            cost = self.ce_loss(outputs, labels)
 
             # Update adversarial images
             grad = torch.autograd.grad(cost, adv_images,retain_graph=False, create_graph=False)[0]
@@ -71,14 +106,14 @@ class FGSM_DEC(torch.nn.Module):
         super().__init__()
         self.eps = eps
         self.detector = detector
-        self.celoss = torch.nn.CrossEntropyLoss()
+        self.ce_loss = torch.nn.CrossEntropyLoss(reduction='mean')
 
     def forward(self, images, labels):
         images = images.clone().detach()
         labels = labels.clone().detach()
         images.requires_grad = True
         outputs = self.detector(images)
-        cost = self.celoss(outputs, labels)
+        cost = self.ce_loss(outputs, labels)
         grad = torch.autograd.grad(cost, images, retain_graph=False, create_graph=False)[0]
 
         attack_images = images + self.eps* grad.sign()
@@ -104,7 +139,7 @@ class PGD_ENC_DEC(torch.nn.Module):
         >>> attack = torchattacks.PGD(model, eps=8/255, alpha=1/255, steps=40, random_start=True)
         >>> adv_images = attack(images, labels)
     """
-    def __init__(self, encoder, detector, eps=0.3,
+    def __init__(self, encoder, detector, eps=8/255,
                  alpha=2/255, steps=40, random_start=True):
         super().__init__()
         self.eps = eps
@@ -164,18 +199,19 @@ class FGSM_ENC_DEC(torch.nn.Module):
         attack_images = torch.clamp(attack_images, min=0, max=1).detach()
         return attack_images
     
-class Traditional_Img_Manupulator():
-    def __init__(self, image):
+class Image_Operations():
+    def __init__(self):
         super().__init__()
-        self.image = image.cuda()
 
-    def uni_noise_perturb(self, eps):
+    def uni_noise_perturb(self,image, eps):
+        self.image = image
         self.image = self.image.clone().detach()
         noise = torch.empty_like(self.image).uniform_(-eps, eps)
         perturbed_image = self.image + noise
         return perturbed_image
     
-    def gaussian_noise_perturb(self, eps):
+    def gaussian_noise_perturb(self, image, eps):
+        self.image = image
         self.image = self.image.clone().detach()
         noise = torch.rand_like(self.image).cuda()*eps
         noise = torch.clamp(noise, min=-eps, max=eps)
@@ -183,11 +219,12 @@ class Traditional_Img_Manupulator():
         perturbed_image = torch.clamp(perturbed_image, min=0, max=1)
         return perturbed_image
     
-    def rotate(self, degrees):
+    def rotate(self, image, degrees):
+        self.image = image
         r"""
         degrees is a 2D list. e.g., degrees=[-20, 20]
         """
-        angle = np.random.uniform(-20, 20)
+        angle = np.random.uniform(degrees[0], degrees[1])
         image = self.image.cpu()
         adv_image = torch.empty_like(image)
         to_pil = torchvision.transforms.ToPILImage()
@@ -201,11 +238,12 @@ class Traditional_Img_Manupulator():
             adv_image[i,:,:,:] = perturbed_image
         return adv_image.cuda()
     
-    def center_crop(self, size_range):
+    def center_crop(self, image, size_range):
+        self.image = image
         r"""
         size_range is a 2D list, e.g., size_range=[250, 400]
         """
-        crop_size = int(np.random.uniform(250, 400))
+        crop_size = int(np.random.uniform(size_range[0], size_range[1]))
         image = self.image.cpu()
         adv_image = torch.empty_like(image)
         to_pil = torchvision.transforms.ToPILImage()
@@ -218,44 +256,13 @@ class Traditional_Img_Manupulator():
             perturbed_image = to_tensor(perturbed_image)
             adv_image[i,:,:,:] = perturbed_image
         return adv_image.cuda()
-    
-    def color_jitter(self):
-        jitter = T.ColorJitter(brightness=.5, hue=.3)
-        jitted_img = jitter(self.image)
-#         jitted_img = torch.empty_like(self.image)
-#         for i in range(self.image.size()[0]):
-#             jitted_img[i,:,:,:] = jitter(self.image[i,:,:,:])
-        return jitted_img
-    
-    def gaussian_blur(self):
-        blurrer = T.GaussianBlur(kernel_size=(3, 7), sigma=(1, 3))
-        blurred_img = blurrer(self.image)
-#         blurred_img = torch.empty_like(self.image)
-#         for i in range(self.image.size()[0]):
-#             blurred_img[i,:,:,:] = blurrer(self.image[i,:,:,:])
-        return blurred_img
-    
-    def random_perspective(self):
-        perspective_transformer = T.RandomPerspective(distortion_scale=0.1, p=1.0)
-        perspectived_img = perspective_transformer(self.image)
-#         perspectived_img = torch.empty_like(self.image)
-#         for i in range(self.image.size()[0]):
-#             perspectived_img[i,:,:,:] = perspective_transformer(self.image[i,:,:,:])
-        return perspectived_img
-    
-    def random_rotation(self):
-        rotater = T.RandomRotation(degrees=(-45, 45))
-        rotated_img = rotater(self.image)
-#         rotated_img = torch.empty_like(self.image)
-#         for i in range(self.image.size()[0]):
-#             rotated_img[i,:,:,:] = rotater(self.image[i,:,:,:])
-        return rotated_img
+
+def random_crop(image, starts, size):
+    start1,start2 = starts
+    mask = torch.zeros_like(image)
+    mask[:,:,start1:start1+size+1,start2:start2+size+1] = mask[:,:,start1:start1+size+1,start2:start2+size+1]+1
+    new_image = torch.mul(image, mask)
+    return new_image
         
-    def random_crop(self):
-        cropper = T.RandomResizedCrop(size=(400, 400))
-        cropped_img = cropper(self.image)
-#         cropped_img = torch.empty_like(self.image)
-#         for i in range(self.image.size()[0]):
-#             cropped_img[i,:,:,:] = cropper(self.image[i,:,:,:])
-        return cropped_img
+        
         
