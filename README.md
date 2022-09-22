@@ -69,13 +69,16 @@ Note: The original metafaces dataset is with 1024*1024 dimention. You can use ou
 ## RUN
 
 Baseline training
+
 ```python3 train.py --run_name your_name --max_step 200000 ```
 
 
 Train smoothed scanner with randomized smoothing
+
 ```python3 train_rs.py --run_name your_name --max_step 200000 --std 0.5```
 
 Train augmented and smoothed scanner with randomized smoothing together with stochastic concatenation of data augmentations.
+
 ```python3 train_rs_aug.py --run_name your_name --max_step 200000 --std 0.5 --aug_start 5000 --aug_end 100000```
 
 ## Watermark Invisibility Demos
