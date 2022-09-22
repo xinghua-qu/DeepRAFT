@@ -1,5 +1,5 @@
  ![General badge](https://img.shields.io/badge/Python%20-3.7.3-1abc9c.svg)
- [![GH Pages Deploy](https://github.com/MichaelCurrin/badge-generator/workflows/GH%20Pages%20Deploy/badge.svg)](https://github.com/MichaelCurrin/badge-generator/actions/workflows/main.yml "GitHub Actions workflow status")
+ [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
 <p align="center">
   <img src="figs/logo_deepraft.png" align="center" width="35%">
   
