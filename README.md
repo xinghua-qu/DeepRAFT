@@ -52,7 +52,7 @@ Install all dependencies via:
 pip3 install -r requirements.txt
 pip3 install git+https://github.com/fra31/auto-attack
 ```
-`DiffJPEG` is used for differentiable data augmentation on JPEG compression.
+`DiffJPEG` is used for differentiable data augmentation on [JPEG compression](https://github.com/mlomnitz/DiffJPEG).
 `autoattack` is for adversarial robustness evaluation purpose.
 
 ## Datasets
