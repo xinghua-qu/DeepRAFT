@@ -1,4 +1,4 @@
- [![General badge](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)]
+ ![General badge](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
  
 <br />
 <p align="center">
