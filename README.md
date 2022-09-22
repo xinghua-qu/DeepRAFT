@@ -94,7 +94,7 @@ Table 2: Subjective evaluation on watermark imperceptibility.
 </p>
 <br>
 
-Table 2: Adversarial robustness evaluation on auto-PGD, square attack and adaptive auto-PGD.
+Table 2: Adversarial robustness evaluation on auto-PGD, square attack and adaptive auto-attack.
 <br>
 <p align="left">
   <img src="figs/adversarial_robustness.png" align="center" width="80%">
