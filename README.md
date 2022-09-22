@@ -1,3 +1,5 @@
+ [![General badge](https://img.shields.io/badge/<Python>-<100%>-<GREEN>.svg)](https://shields.io/)
+ 
 <br />
 <p align="center">
   <img src="figs/logo_deepraft.png" align="center" width="37%">
@@ -20,6 +22,6 @@
 
 <p align="center">
   <a href="https://openreview.net/forum?id=79VEVKQxekf&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2023%2FConference%2FAuthors%23your-submissions)" target='_blank'>
-    <img src="https://img.shields.io/badge/Paper-%F0%9F%93%83-blue" has been submitted>
+    <img src="https://img.shields.io/badge/Paper-%F0%9F%93%83-blue">
   </a>
 </p>
