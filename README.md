@@ -1,8 +1,7 @@
  ![General badge](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
- 
 <br />
 <p align="center">
-  <img src="figs/logo_deepraft.png" align="center" width="37%">
+  <img src="figs/logo_deepraft.png" align="center" width="35%">
   
   <h3 align="center"><strong>Only For You: Deep Neural Anti-Forwarding Watermark Preserves Image Privacy</strong></h3>
 
