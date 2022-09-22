@@ -1,4 +1,4 @@
- [![General badge](https://img.shields.io/badge/<Python>-<100%>-<GREEN>.svg)](https://shields.io/)
+ [![General badge](https://img.shields.io/github/license/{Github}/{DeepRAFT}.svg)](https://shields.io/)
  
 <br />
 <p align="center">
