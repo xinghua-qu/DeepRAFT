@@ -81,7 +81,7 @@ Note: The original metafaces dataset is with 1024\times1024 dimention. You can u
 Table 1: Anti-forwarding watermark detection accuracy
 <br>
 <p align="center">
-  <img src="figs/accuricies.png" align="center" width="70%">
+  <img src="figs/accuricies.png" align="center" width="40%">
   <br>
 </p>
 <br>
@@ -89,7 +89,7 @@ Table 1: Anti-forwarding watermark detection accuracy
 Table 2: Subjective evaluation on watermark imperceptibility.
 <br>
 <p align="center">
-  <img src="figs/psnr_ssim.png" align="center" width="70%">
+  <img src="figs/psnr_ssim.png" align="center" width="90%">
   <br>
 </p>
 <br>
@@ -97,7 +97,7 @@ Table 2: Subjective evaluation on watermark imperceptibility.
 Table 2: Adversarial robustness evaluation on auto-PGD, square attack and adaptive auto-PGD.
 <br>
 <p align="center">
-  <img src="figs/adversarial_robustness.png" align="center" width="70%">
+  <img src="figs/adversarial_robustness.png" align="center" width="90%">
   <br>
 </p>
 <br>
