@@ -65,3 +65,39 @@ Note: The original metafaces dataset is with 1024\times1024 dimention. You can u
   <br>
 </p>
 <br>
+
+## RUN
+```python3 train.py --run_name your_name --max_step 200000 ```
+
+## Watermark Invisibility Demos
+<br>
+<p align="center">
+  <img src="figs/demos.png" align="center" width="70%">
+  <br>
+</p>
+<br>
+
+## Results
+Table 1: Anti-forwarding watermark detection accuracy
+<br>
+<p align="center">
+  <img src="figs/accuricies.png" align="center" width="70%">
+  <br>
+</p>
+<br>
+
+Table 2: Subjective evaluation on watermark imperceptibility.
+<br>
+<p align="center">
+  <img src="figs/psnr_ssim.png" align="center" width="70%">
+  <br>
+</p>
+<br>
+
+Table 2: Adversarial robustness evaluation on auto-PGD, square attack and adaptive auto-PGD.
+<br>
+<p align="center">
+  <img src="figs/adversarial_robustness.png" align="center" width="70%">
+  <br>
+</p>
+<br>
