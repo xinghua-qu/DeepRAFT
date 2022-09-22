@@ -1,5 +1,6 @@
+  [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
  ![General badge](https://img.shields.io/badge/Python%20-3.7.3-1abc9c.svg)
- [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
+ ![General badge](https://img.shields.io/badge/torch%20-1.10.0-1abc9c.svg)
 <p align="center">
   <img src="figs/logo_deepraft.png" align="center" width="35%">
   
