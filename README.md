@@ -45,7 +45,12 @@ To this end, we jointly train a DeepRAFT encoder and scanner, where the encoder 
 ## Installtion 
 
 ## Datasets
-We use two datasets with dimention 400*400.
+We use two datasets with dimention 400*400. Datsets can be downloaded through the commands below.
+```
+wget http://press.liacs.nl/mirflickr/mirflickr25k.v3b/mirflickr25k.zip
+```
+Metafaces dataset can be obtained from [github](https://github.com/NVlabs/metfaces-dataset).
+Note: The original metafaces dataset is with 1024\times1024 dimention. You can use our `Image_Processing.ipynb` to precess them into 400*400 dimension.
 <br>
 <p align="center">
   <img src="figs/dataset_compare.png" align="center" width="95%">
