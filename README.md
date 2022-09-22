@@ -1,5 +1,9 @@
- ![General badge](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
-<br />
+  [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
+  [![Made with Python](https://img.shields.io/badge/Python-=3.7.3-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
+ ![Made with pytorch](https://img.shields.io/badge/pytorch-=1.10.0-blue)
+ ![Made with torchvision](https://img.shields.io/badge/torchvision-=0.11.0-blue)
+<!--  ![General badge](https://img.shields.io/badge/Python%20-3.7.3-1abc9c.svg)
+ ![General badge](https://img.shields.io/badge/torch%20-1.10.0-1abc9c.svg) -->
 <p align="center">
   <img src="figs/logo_deepraft.png" align="center" width="35%">
   
@@ -48,7 +52,7 @@ Install all dependencies via:
 pip3 install -r requirements.txt
 pip3 install git+https://github.com/fra31/auto-attack
 ```
-`DiffJPEG` is used for differentiable data augmentation on JPEG compression.
+`DiffJPEG` is used for differentiable data augmentation on [JPEG compression](https://github.com/mlomnitz/DiffJPEG).
 `autoattack` is for adversarial robustness evaluation purpose.
 
 ## Datasets
