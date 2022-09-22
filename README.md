@@ -1,5 +1,5 @@
   [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
-  [![Made with python](https://img.shields.io/badge/Python-==3.7.3-blue?logo=python&logoColor=white)(https://python.org "Go to Python homepage")
+  [![Made with Python](https://img.shields.io/badge/Python->=3.6-blue?logo=python&logoColor=white)](https://python.org "Go to Python homepage")
   [![Made with pytorch](https://img.shields.io/badge/pytorch-==1.10.0-blue)
   [![Made with torchvision](https://img.shields.io/badge/torchvision-==0.11.0-blue)
  ![General badge](https://img.shields.io/badge/Python%20-3.7.3-1abc9c.svg)
