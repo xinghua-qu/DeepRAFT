@@ -26,10 +26,18 @@
 </p>
 
 ## Introduction
-In recent decades, messaging apps (e.g., Facebook Messager, Whatsapp, Wechat, Snapchat) have expanded exponentially, where a huge amount of private image sharing takes place daily. However, within these apps, the possible unauthorised or malicious image forwarding among users poses significant threats to personal image privacy. In specific situations, we hope to send private and confidential images (e.g., personal selfies) in an `**only for you**' manner. Given limited existing studies on this topic, for the first time, we propose the Deep Neu**r**al **A**nti-**F**orwarding Wa**t**ermark (DeepRAFT) that enables media platforms to check and block any unauthorised forwarding of protected images through injecting non-fragile and invisible watermarks. To this end, we jointly train a DeepRAFT encoder and scanner, where the encoder embeds a confidentiality stamp into images as watermarks, and the scanner learns to detect them.
+In recent decades, messaging apps (e.g., Facebook Messager, Whatsapp, Wechat, Snapchat) have expanded exponentially, where a huge amount of private image sharing takes place daily. However, within these apps, the possible unauthorised or malicious image forwarding among users poses significant threats to personal image privacy. In specific situations, we hope to send private and confidential images (e.g., personal selfies) in an `**only for you**' manner. Given limited existing studies on this topic, for the first time, we propose the Deep Neu**r**al **A**nti-**F**orwarding Wa**t**ermark (DeepRAFT) that enables media platforms to check and block any unauthorised forwarding of protected images through injecting non-fragile and invisible watermarks. 
 <br>
 <p align="center">
   <img src="figs/pipeline_github.png" align="center" width="95%">
+  <br>
+</p>
+<br>
+
+To this end, we jointly train a DeepRAFT encoder and scanner, where the encoder embeds a confidentiality stamp into images as watermarks, and the scanner learns to detect them. To ensure that the technique is robust and resistant to tampering, we involve a series of data augmentations (mounted on a stochastic concatenation process) and randomized smoothing (a scalable and certified defense) towards both common image corruptions (e.g., rotation, cropping, color jitters, defocus blur, perspective warping, pixel noise, JPEG compression) and adversarial attacks (i.e., under both black and white box settings). The training pipeline is shown as below.
+<br>
+<p align="center">
+  <img src="figs/training_pipeline_github.png" align="center" width="95%">
   <br>
 </p>
 <br>
