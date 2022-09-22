@@ -116,3 +116,13 @@ Table 2: Adversarial robustness evaluation on auto-PGD, square attack and adapti
   <br>
 </p>
 <br>
+
+## Pre-trained models
+We provide three types of pretrained models under the folder `pretrained_models/`.
+```
+pretrained_models/baseline/
+
+pretrained_models/rs/
+
+pretrained_models/rs_aug/
+```
