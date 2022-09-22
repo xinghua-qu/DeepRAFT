@@ -43,10 +43,14 @@ To this end, we jointly train a DeepRAFT encoder and scanner, where the encoder 
 <br>
 
 ## Installtion 
-Install the dependencies via:
+Install all dependencies via:
 ```
 pip3 install -r requirements.txt
+pip3 install git+https://github.com/fra31/auto-attack
+git clone https://github.com/mlomnitz/DiffJPEG
 ```
+`DiffJPEG` is used for differentiable data augmentation on JPEG compression.
+`autoattack` is for adversarial robustness evaluation purpose.
 
 ## Datasets
 We use two datasets with dimention 400*400. Datsets can be downloaded through the commands below.
