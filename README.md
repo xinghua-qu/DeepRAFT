@@ -14,6 +14,6 @@
       <a href="" target='_blank'>Zhu Sun</a><sup>4</sup>,&nbsp;
       <a href="" target='_blank'>Zejun Ma</a><sup>1</sup>
     <br>
-  <sup>1</sup>ByteDance AI Lab&nbsp; <sup>2</sup>MIT&nbsp; <sup>3</sup>NTU&nbsp; <sup>4</sup>IHPC, A*STAR
+  <sup>1</sup>ByteDance AI Lab&nbsp; <sup>2</sup>MIT&nbsp; <sup>3</sup>NTU&nbsp; <sup>4</sup>A*STAR
   </p>
 </p>
