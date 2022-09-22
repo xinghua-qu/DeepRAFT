@@ -42,4 +42,13 @@ To this end, we jointly train a DeepRAFT encoder and scanner, where the encoder 
 </p>
 <br>
 
-## Installtion & Datasets
+## Installtion 
+
+## Datasets
+We use two datasets with dimention 400*400.
+<br>
+<p align="center">
+  <img src="figs/dataset_compare.png" align="center" width="95%">
+  <br>
+</p>
+<br>
