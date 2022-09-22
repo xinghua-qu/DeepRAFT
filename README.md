@@ -1,4 +1,4 @@
- ![General badge](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
+ ![General badge](https://img.shields.io/badge/Python%20-3.7.3-1abc9c.svg)
 <br />
 <p align="center">
   <img src="figs/logo_deepraft.png" align="center" width="35%">
