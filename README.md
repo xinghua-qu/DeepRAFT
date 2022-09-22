@@ -17,3 +17,9 @@
   <sup>1</sup>ByteDance AI Lab&nbsp; <sup>2</sup>MIT&nbsp; <sup>3</sup>NTU&nbsp; <sup>4</sup>A*STAR
   </p>
 </p>
+
+<p align="center">
+  Our work has been submitted. <a href="https://openreview.net/forum?id=79VEVKQxekf&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2023%2FConference%2FAuthors%23your-submissions)" target='_blank'>
+    <img src="https://img.shields.io/badge/Paper-%F0%9F%93%83-blue">
+  </a>
+</p>
