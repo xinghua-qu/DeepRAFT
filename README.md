@@ -9,7 +9,7 @@
   
   <h3 align="center"><strong>Only For You: Deep Neural Anti-Forwarding Watermark Preserves Image Privacy</strong></h3>
 
-  <p align="center">
+[//]: <> (<p align="center">
       <a href="https://scholar.google.com/citations?user=2PxlmU0AAAAJ" target='_blank'>Xinghua Qu</a><sup>1</sup>,&nbsp;
       <a href="https://scholar.google.com/citations?user=SP4eIUYAAAAJ&hl=en" target='_blank'>Alvin Chan</a><sup>2</sup>,&nbsp;
       <a href="https://scholar.google.com/citations?user=h9oWOsEAAAAJ&hl=en" target='_blank'>Yew-Soon Ong</a><sup>3,4</sup>,&nbsp;
@@ -22,7 +22,7 @@
   <sup>1</sup>ByteDance AI Lab&nbsp; <sup>2</sup>MIT&nbsp; <sup>3</sup>NTU&nbsp; <sup>4</sup>A*STAR
   </p>
 </p>
-
+)
 
 ## Introduction
 In recent decades, messaging apps (e.g., Facebook Messager, Whatsapp, Wechat, Snapchat) have expanded exponentially, where a huge amount of private image sharing takes place daily. However, within these apps, the possible unauthorised or malicious image forwarding among users poses significant threats to personal image privacy. In specific situations, we hope to send private and confidential images (e.g., personal selfies) in an `**only for you**' manner. Given limited existing studies on this topic, for the first time, we propose the Deep Neu**r**al **A**nti-**F**orwarding Wa**t**ermark (DeepRAFT) that enables media platforms to check and block any unauthorised forwarding of protected images through injecting non-fragile and invisible watermarks. 
