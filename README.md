@@ -9,7 +9,6 @@
   
   <h3 align="center"><strong>Only For You: Deep Neural Anti-Forwarding Watermark Preserves Image Privacy</strong></h3>
 
-<!---
 <p align="center">
       <a href="https://scholar.google.com/citations?user=2PxlmU0AAAAJ" target='_blank'>Xinghua Qu</a><sup>1</sup>,&nbsp;
       <a href="https://scholar.google.com/citations?user=SP4eIUYAAAAJ&hl=en" target='_blank'>Alvin Chan</a><sup>2</sup>,&nbsp;
@@ -23,7 +22,7 @@
   <sup>1</sup>ByteDance AI Lab&nbsp; <sup>2</sup>MIT&nbsp; <sup>3</sup>NTU&nbsp; <sup>4</sup>A*STAR
   </p>
 </p>
--->
+
 
 
 ## Introduction
